@@ -132,13 +132,13 @@ export default defineConfig({
   // this only affects React work.)
   jsxSingleQuote: false,
 
-  // NON-DEFAULT (default "preserve"). Object expansion is decided by content
-  // and printWidth, never by whether the author left a newline after `{`.
-  // "preserve" makes output a function of invisible authoring history, which
-  // agents are inconsistent about — the exact thing this config exists to fix.
-  // Cost: no way to force a route table or variant map to stay expanded.
-  // JSON is exempted in `overrides` below.
-  objectWrap: 'collapse',
+  // DEFAULT. A newline after `{` is a signal, not noise: humans and agents
+  // both write short-but-related fields one per line on purpose (a route
+  // table, a variant map, a `scripts` block), and "collapse" would jam them
+  // onto one line the moment they fit. Cost: the same object can format two
+  // ways depending on how it was first written. Worth it for keeping the
+  // author's grouping.
+  objectWrap: 'preserve',
 
   // NON-DEFAULT (default 100). Slightly wider: keeps most annotated signatures
   // and import lines flat while staying narrow enough for a GitHub split-diff
@@ -155,7 +155,8 @@ export default defineConfig({
   // header maps, wire formats, Record<string, T> lookups — and half-quoted
   // reads like two things stapled together. Cost: adding one quoted key
   // re-quotes every other key, turning a one-line change into a whole-object
-  // diff. ("preserve" was rejected for the same reason as objectWrap.)
+  // diff. ("preserve" was rejected: unlike objectWrap, a stray quote carries
+  // no intent worth keeping.)
   quoteProps: 'consistent',
 
   // DEFAULT. Explicit semicolons. Without them JavaScript guesses where
@@ -330,13 +331,6 @@ export default defineConfig({
 
   // Later entries win when a file matches several, so order matters.
   overrides: [
-    {
-      // Data files aren't code. objectWrap: "collapse" would jam a short
-      // "scripts" block or a nested tsconfig key onto one line, which is far
-      // more visible and less useful than the determinism it buys in source.
-      files: ['**/*.json', '**/*.jsonc', '**/*.json5'],
-      options: { objectWrap: 'preserve' },
-    },
     {
       // Long expect(...).toBe(...) chains and inline mocks wrap awkwardly at
       // 109. 132 keeps assertions flat while still breaking fixture objects

@@ -68,7 +68,7 @@ oxfmt --write   # locally
 
 1. **Every option is decided.** Defaults are listed too, so the config is the complete, greppable inventory of what your code will look like. CI fails if an oxfmt release adds an option nobody has decided on yet.
 2. **Comments are mandatory.** Every option has a comment saying _why_, tagged `DEFAULT` or `NON-DEFAULT` so the opinions are easy to find. If a decision can't justify itself, it's not a decision yet.
-3. **Output is a function of the code, not its history.** `objectWrap: "collapse"` and `quoteProps: "consistent"` mean the formatter never reads an author's (or an agent's) stray newline as an instruction.
+3. **Layout is decided by the code, with one exception.** `quoteProps: "consistent"` means a stray quote never changes the whole object. `objectWrap: "preserve"` is the exception: a newline after `{` is a deliberate choice to keep related fields one per line, so the formatter honors it.
 4. **Optimize for diffs.** `singleAttributePerLine`, `trailingComma: "all"` and sorted imports make every change a one-line change. Reviewing agent-written PRs is where this pays off.
 5. **Nothing about _your_ repo.** No ignore patterns, no custom import groups, no Tailwind paths. Anything that describes a specific project's layout belongs in that project's config, not a shared one. See [Common overrides](#common-overrides).
 
@@ -80,7 +80,6 @@ The short list of opinions. Everything else is at oxfmt's default, on purpose, w
 | ------------------------------ | ---------------------------------------------- | --------------------------------------------------------------------------- |
 | `printWidth`                   | `109`                                          | Keeps annotated signatures flat, still fits a GitHub split-diff on a laptop |
 | `singleQuote`                  | `true`                                         | Single quotes in JS/TS/CSS/YAML/Markdown/Svelte; JSX attributes stay double |
-| `objectWrap`                   | `"collapse"`                                   | Object layout decided by width, not by a leftover newline (JSON exempt)     |
 | `quoteProps`                   | `"consistent"`                                 | One quoted key quotes them all; no half-quoted lookup tables                |
 | `experimentalOperatorPosition` | `"start"`                                      | Long `&&`/`\|\|` chains read like a list; the operator leads each line      |
 | `singleAttributePerLine`       | `true`                                         | Every prop change is a one-line diff                                        |
@@ -89,7 +88,6 @@ The short list of opinions. Everything else is at oxfmt's default, on purpose, w
 | `sortPackageJson`              | `sortScripts: true`                            | Findable scripts; `format` / `format:check` still cluster                   |
 | `sortTailwindcss`              | on, sees into `cn`/`clsx`/`cva`/`tv`/`twMerge` | No-ops without Tailwind installed; never reorders unknown classes           |
 | `svelte`                       | on, defaults                                   | Without it `.svelte` files aren't formatted at all                          |
-| `overrides` (JSON)             | `objectWrap: "preserve"`                       | Data files aren't code; a collapsed `scripts` block is unreadable           |
 | `overrides` (test files)       | `printWidth: 132`                              | `expect(...).toBe(...)` chains stay flat                                    |
 
 Two things the config _overrides in your editor setup_: `endOfLine: "lf"` and `insertFinalNewline: true` win over `.editorconfig`.
