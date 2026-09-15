@@ -23,7 +23,7 @@ pnpm add -D oxfmt @himynameisdave/oxfmt-config
 yarn add -D oxfmt @himynameisdave/oxfmt-config
 ```
 
-- Requires `oxfmt >=0.65.0 <1`. Why that range, and how it moves: [Versioning & compatibility](#versioning--compatibility).
+- Requires `oxfmt >=0.67.0 <1`. Why that range, and how it moves: [Versioning & compatibility](#versioning--compatibility).
 
 ## Configurations
 
@@ -102,7 +102,7 @@ Version bumps describe what a release does to _your_ diff:
 
 Reformatting is deliberately _not_ a major bump. One-time churn is the deal `^` buys you. Don't want it? Use `~` (patch only) with a committed lockfile, and upgrade deliberately.
 
-**Supported oxfmt: `>=0.65.0 <1`.** The floor is the version this release's option inventory was certified against, so it moves whenever new options are decided. oxfmt is pre-1.0 and its own releases can change output too, so pin `oxfmt` exactly in your project and bump it with intent. The `<1` ceiling is there because an oxfmt 1.0 needs a release here anyway.
+**Supported oxfmt: `>=0.67.0 <1`.** The floor is the version this release's option inventory was certified against, so it moves whenever new options are decided. oxfmt is pre-1.0 and its own releases can change output too, so pin `oxfmt` exactly in your project and bump it with intent. The `<1` ceiling is there because an oxfmt 1.0 needs a release here anyway.
 
 **Spreading replaces whole keys.** `{ ...base, sortImports: { groups: [...] } }` throws away every other `sortImports` decision. Spread the nested object too: `sortImports: { ...base.sortImports, groups: [...] }`.
 
