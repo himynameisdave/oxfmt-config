@@ -57,7 +57,7 @@
     "test:consumer": "tsc && bun scripts/consumer-smoke.ts"
   },
   "devDependencies": {
-    "@himynameisdave/oxlint-config": "^1.2.0",
+    "@himynameisdave/oxlint-config": "^2.1.0",
     "@types/bun": "^1.4.2",
     "oxfmt": "0.67.0",
     "oxlint": "1.82.0",

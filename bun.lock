@@ -5,7 +5,7 @@
     "": {
       "name": "@himynameisdave/oxfmt-config",
       "devDependencies": {
-        "@himynameisdave/oxlint-config": "^1.2.0",
+        "@himynameisdave/oxlint-config": "^2.1.0",
         "@types/bun": "^1.4.2",
         "oxfmt": "0.67.0",
         "oxlint": "1.82.0",
@@ -19,7 +19,7 @@
     },
   },
   "packages": {
-    "@himynameisdave/oxlint-config": ["@himynameisdave/oxlint-config@1.2.0", "", { "peerDependencies": { "oxlint": ">=1.78.0 <2", "oxlint-tsgolint": ">=7.0.2001" }, "optionalPeers": ["oxlint-tsgolint"] }, "sha512-QG7wb0jcmjUx4bSsYQ1XwPP9qQcvNHC9jjJ/Ix8yuz08OW9WhAQNcU0JrOXAy7nFhPGHDjSdBL3AGTXAAxG5ug=="],
+    "@himynameisdave/oxlint-config": ["@himynameisdave/oxlint-config@2.1.0", "", { "dependencies": { "eslint-plugin-bunisms": "0.10.0" }, "peerDependencies": { "oxlint": ">=1.85.0 <2", "oxlint-tsgolint": ">=7.0.2001" }, "optionalPeers": ["oxlint-tsgolint"] }, "sha512-J0PewtxUivvwo3lVS78T1kJSbHIHOobK/PTFq7Pruir2VwnYqZfOKwbopvRNevokIkUVdrmz0CRIArehIVsTzw=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 
@@ -178,6 +178,8 @@
     "clsx": ["clsx@2.1.1", "", {}, "sha512-eYm0QWBtUrBWZWG0d386OGAw16Z995PiOVo2B7bjWSbHedGl5e0ZWaq65kOGgUSNesEIDkB9ISbTg/JK9dhCZA=="],
 
     "devalue": ["devalue@5.9.4", "", {}, "sha512-sPAT4pztbu6586/hrhOnMKS17IJrvg12mXiSPSS3W5qDeN2RGgvZ0diZCm31dBbnevfVmujNO3IM2wrS4Y2Rhg=="],
+
+    "eslint-plugin-bunisms": ["eslint-plugin-bunisms@0.10.0", "", { "peerDependencies": { "eslint": ">=9.0.0 <11" }, "optionalPeers": ["eslint"] }, "sha512-duyNkTo/etaTLIrHWDxAheNZ2w3N5Ivy21+5wXjj5KkmI9jafyT+R+UehczB7YeGzMsRaHy5A4cPGtlRWqPgBw=="],
 
     "esm-env": ["esm-env@1.2.2", "", {}, "sha512-Epxrv+Nr/CaL4ZcFGPJIYLWFom+YeV1DqMLHJoEd9SYRxNbaFruBwfEX/kkHUJf55j2+TUbmDcmuilbP1TmXHA=="],
 
