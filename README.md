@@ -23,7 +23,7 @@ pnpm add -D oxfmt @himynameisdave/oxfmt-config
 yarn add -D oxfmt @himynameisdave/oxfmt-config
 ```
 
-- Requires `oxfmt >=0.65.0 <1`. Why that range, and how it moves: [Versioning & compatibility](#versioning--compatibility).
+- Requires `oxfmt >=0.74.0 <1`. Why that range, and how it moves: [Versioning & compatibility](#versioning--compatibility).
 
 ## Configurations
 
@@ -39,8 +39,9 @@ oxfmt has no `extends`, so you spread the config into your own. A regular projec
 
 ```ts
 // oxfmt.config.ts
-import { defineConfig } from 'oxfmt';
+
 import base from '@himynameisdave/oxfmt-config/base';
+import { defineConfig } from 'oxfmt';
 
 export default defineConfig({ ...base });
 ```
@@ -49,8 +50,9 @@ A Svelte project:
 
 ```ts
 // oxfmt.config.ts
-import { defineConfig } from 'oxfmt';
+
 import svelte from '@himynameisdave/oxfmt-config/svelte';
+import { defineConfig } from 'oxfmt';
 
 export default defineConfig({ ...svelte });
 ```
@@ -102,7 +104,7 @@ Version bumps describe what a release does to _your_ diff:
 
 Reformatting is deliberately _not_ a major bump. One-time churn is the deal `^` buys you. Don't want it? Use `~` (patch only) with a committed lockfile, and upgrade deliberately.
 
-**Supported oxfmt: `>=0.65.0 <1`.** The floor is the version this release's option inventory was certified against, so it moves whenever new options are decided. oxfmt is pre-1.0 and its own releases can change output too, so pin `oxfmt` exactly in your project and bump it with intent. The `<1` ceiling is there because an oxfmt 1.0 needs a release here anyway.
+**Supported oxfmt: `>=0.74.0 <1`.** The floor is the version this release's option inventory was certified against, so it moves whenever new options are decided. oxfmt is pre-1.0 and its own releases can change output too, so pin `oxfmt` exactly in your project and bump it with intent. The `<1` ceiling is there because an oxfmt 1.0 needs a release here anyway.
 
 **Spreading replaces whole keys.** `{ ...base, sortImports: { groups: [...] } }` throws away every other `sortImports` decision. Spread the nested object too: `sortImports: { ...base.sortImports, groups: [...] }`.
 
@@ -118,8 +120,9 @@ Things real projects legitimately add. They describe _your_ repo, so they don't 
 
 ```ts
 // oxfmt.config.ts
-import { defineConfig } from 'oxfmt';
+
 import svelte from '@himynameisdave/oxfmt-config/svelte';
+import { defineConfig } from 'oxfmt';
 
 export default defineConfig({
   ...svelte,

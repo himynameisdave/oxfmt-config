@@ -22,6 +22,17 @@ export default defineConfig({
   // mixed codebase rather than a terser one.
   arrowParens: 'always',
 
+  // DEFAULT. Empty by design: associations map file globs to a language, which
+  // describes a specific repo's layout (Angular `*.html` templates, `*.wxml`),
+  // not a style opinion. Same reasoning as ignorePatterns; consumers own this.
+  associations: [],
+
+  // OFF BY DEFAULT — and off here. Enabling it needs `@astrojs/compiler-rs`
+  // installed (oxfmt doesn't bundle it) and formatting fails without it, which
+  // no non-Astro project has. Nothing in the stack uses Astro, so there is no
+  // entry point for it; an Astro consumer sets `astro: true` locally.
+  astro: false,
+
   // DEFAULT. Closing `>` of a multi-line tag goes on its own line, acting as a
   // visual break between the attribute block and the children.
   bracketSameLine: false,
