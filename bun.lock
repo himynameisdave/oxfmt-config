@@ -19,7 +19,7 @@
     },
   },
   "packages": {
-    "@himynameisdave/oxlint-config": ["@himynameisdave/oxlint-config@2.2.0", "", { "dependencies": { "eslint-plugin-bunisms": "0.10.0" }, "peerDependencies": { "oxlint": ">=1.88.0 <2", "oxlint-tsgolint": ">=7.0.2003" }, "optionalPeers": ["oxlint-tsgolint"] }, "sha512-PXt91UM6lf+VWln9jvR/ZZeUguuDbEAeFvrI+T8gczSxz+hTyw8yT5IaxbOqljw/0kPIPZLIMG7knkBK/lyjSg=="],
+    "@himynameisdave/oxlint-config": ["@himynameisdave/oxlint-config@2.3.0", "", { "dependencies": { "eslint-plugin-bunisms": "0.11.0" }, "peerDependencies": { "oxlint": ">=1.90.0 <2", "oxlint-tsgolint": ">=7.0.2003" }, "optionalPeers": ["oxlint-tsgolint"] }, "sha512-kGMPwDOBtrGWi6EFFrxI/M4iMwpvw7ZlTYhuHo0s0g8ULmKJNnl8lsPT+VC1f2JDXXkomn72EvWzlXO1aKGFQQ=="],
 
     "@jridgewell/gen-mapping": ["@jridgewell/gen-mapping@0.3.13", "", { "dependencies": { "@jridgewell/sourcemap-codec": "^1.5.0", "@jridgewell/trace-mapping": "^0.3.24" } }, "sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA=="],
 
@@ -179,7 +179,7 @@
 
     "devalue": ["devalue@5.9.4", "", {}, "sha512-sPAT4pztbu6586/hrhOnMKS17IJrvg12mXiSPSS3W5qDeN2RGgvZ0diZCm31dBbnevfVmujNO3IM2wrS4Y2Rhg=="],
 
-    "eslint-plugin-bunisms": ["eslint-plugin-bunisms@0.10.0", "", { "peerDependencies": { "eslint": ">=9.0.0 <11" }, "optionalPeers": ["eslint"] }, "sha512-duyNkTo/etaTLIrHWDxAheNZ2w3N5Ivy21+5wXjj5KkmI9jafyT+R+UehczB7YeGzMsRaHy5A4cPGtlRWqPgBw=="],
+    "eslint-plugin-bunisms": ["eslint-plugin-bunisms@0.11.0", "", { "peerDependencies": { "eslint": ">=9.0.0 <11" }, "optionalPeers": ["eslint"] }, "sha512-hZSBavDoaqDnGqnEkvMNgOihs5BbNvHJpvWuGbFIKBKT1Br65nBXY8FFjxyy8lYD5cKKIq5Sp6o6KHyOeWUDQQ=="],
 
     "esm-env": ["esm-env@1.2.2", "", {}, "sha512-Epxrv+Nr/CaL4ZcFGPJIYLWFom+YeV1DqMLHJoEd9SYRxNbaFruBwfEX/kkHUJf55j2+TUbmDcmuilbP1TmXHA=="],
 
